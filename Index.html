@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sparkle & Boom | Premium Fireworks</title>
+    <style>
+        :root {
+            --primary: #0a0a12;    /* Deep Space Navy */
+            --accent: #d4af37;     /* Luxury Gold */
+            --card-bg: #161625;
+            --text: #ffffff;
+            --whatsapp: #25D366;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, sans-serif; }
+        body { background-color: var(--primary); color: var(--text); overflow-x: hidden; }
+
+        /* Navigation */
+        nav { background: rgba(10, 10, 18, 0.95); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid rgba(212, 175, 55, 0.3); padding: 15px 0; }
+        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
+        .logo { color: var(--accent); font-size: 1.6em; font-weight: 800; letter-spacing: 2px; text-decoration: none; }
+        .nav-menu { display: flex; list-style: none; gap: 25px; }
+        .nav-menu a { color: #aaa; text-decoration: none; font-weight: 600; cursor: pointer; transition: 0.3s; font-size: 0.9em; text-transform: uppercase; }
+        .nav-menu a:hover, .nav-menu a.active { color: var(--accent); }
+
+        /* Page System */
+        .page { display: none; padding: 60px 20px; max-width: 1200px; margin: 0 auto; min-height: 80vh; }
+        .page.active { display: block; animation: slideUp 0.5s ease-out; }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Gallery Page (Using Real Images) */
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 15px; }
+        .gallery-item { border-radius: 12px; overflow: hidden; height: 300px; border: 1px solid #333; transition: 0.4s; }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        .gallery-item:hover img { transform: scale(1.1); filter: brightness(1.2); }
+
+        /* Shop Page (Images + Price + WA Link) */
+        .shop-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .product-card { background: var(--card-bg); border-radius: 20px; overflow: hidden; border: 1px solid #222; transition: 0.3s; }
+        .product-card:hover { border-color: var(--accent); transform: translateY(-5px); }
+        .product-img { width: 100%; height: 220px; object-fit: cover; }
+        .product-info { padding: 20px; }
+        .price { color: var(--accent); font-size: 1.5em; font-weight: bold; margin: 10px 0; display: block; }
+        .wa-btn { 
+            background: var(--whatsapp); color: white; text-decoration: none; 
+            display: flex; align-items: center; justify-content: center; gap: 10px;
+            padding: 12px; border-radius: 10px; font-weight: bold; transition: 0.3s;
+        }
+        .wa-btn:hover { background: #1eb954; filter: brightness(1.1); }
+
+        /* Contact Section */
+        .contact-card { background: var(--card-bg); padding: 40px; border-radius: 20px; text-align: center; max-width: 600px; margin: 0 auto; border: 1px solid #222; }
+        
+        h1, h2 { text-align: center; margin-bottom: 40px; color: var(--accent); text-transform: uppercase; letter-spacing: 3px; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">✨ 🎆Ananthi Crackers ✨ 🎆</a>
+            <ul class="nav-menu">
+                <li><a onclick="showPage('home')" id="btn-home" class="active">Home</a></li>
+                <li><a onclick="showPage('shop')" id="btn-shop">Price List</a></li>
+                <li><a onclick="showPage('gallery')" id="btn-gallery">Gallery</a></li>
+                <li><a onclick="showPage('contact')" id="btn-contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="home" class="page active">
+        <div style="text-align: center; padding: 100px 20px; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1467810563316-b5476525c0f9?q=80&w=2069&auto=format&fit=crop'); background-size: cover; border-radius: 30px;">
+            <h1>Light Up the Night</h1>
+            <p style="font-size: 1.2em; color: #ddd; margin-bottom: 30px;">Premium Fireworks for Life's Greatest Moments.</p>
+            <button onclick="showPage('shop')" style="background: var(--accent); padding: 15px 40px; border: none; border-radius: 30px; font-weight: bold; cursor: pointer;">Explore Catalog</button>
+        </div>
+    </div>
+
+    <div id="shop" class="page">
+        <h2>Premium Collection</h2>
+        <div class="shop-grid">
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1533230398624-447783f2c7f5?q=80&w=400&auto=format&fit=crop" class="product-img" alt="Sparklers">
+                <div class="product-info">
+                    <h3>Golden Sparklers (Box)</h3>
+                    <p>Standard safe-to-hold 10" sparklers for kids.</p>
+                    <span class="price">र15.00</span>
+                    <a href="https://wa.me/8056805683?text=I%20want%20to%20order%20Golden%20Sparklers%20($15)" class="wa-btn" target="_blank">Order on WhatsApp</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1498931299472-f7a63a5a1cfa?q=80&w=400&auto=format&fit=crop" class="product-img" alt="Aerial Shell">
+                <div class="product-info">
+                    <h3>Sky Bloom Shells</h3>
+                    <p>High-altitude multi-color explosion shells.</p>
+                    <span class="price">र45.00</span>
+                    <a href="https://wa.me/8056805683?text=I%20want%20to%20order%20Sky%20Bloom%20Shells%20($45)" class="wa-btn" target="_blank">Order on WhatsApp</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1545300551-09689f798e40?q=80&w=400&auto=format&fit=crop" class="product-img" alt="Cake">
+                <div class="product-info">
+                    <h3>50-Shot Mega Cake</h3>
+                    <p>A full 2-minute professional display in one box.</p>
+                    <span class="price">र120.00</span>
+                    <a href="https://wa.me/8056805683?text=I%20want%20to%20order%2050-Shot%20Mega%20Cake%20($120)" class="wa-btn" target="_blank">Order on WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="gallery" class="page">
+        <h2>Our Spectacular Displays</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="https://www.bluemooncrackers.com/assets/img/seo.jpg"></div>
+            <div class="gallery-item"><img src="https://png.pngtree.com/thumb_back/fh260/background/20241017/pngtree-happy-diwali-festival-of-lights-greetings-indian-celebration-rocket-crackers-fireworks-image_16402350.jpg"></div>
+            <div class="gallery-item"><img src="https://www.hindustantimes.com/ht-img/img/2023/11/04/550x309/delhi-green-crackers-diwali_4022567c-2013-11eb-b832-c83edd1c747c_1699087609432.jpg"></div>
+            <div class="gallery-item"><img src="https://www.winni.in/celebrate-relations/wp-content/uploads/2019/10/Bursting-Crackers-to-Remove-Negative-Spirits.jpg"></div>
+            <div class="gallery-item"><img src="https://images.pexels.com/photos/3656267/pexels-photo-3656267.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"></div>
+            <div class="gallery-item"><img src="https://www.therrcrackers.com/images/singlesound.jpg"></div>
+        </div>
+    </div>
+
+    <div id="contact" class="page">
+        <h2>Contact Us</h2>
+        <div class="contact-card">
+            <p style="font-size: 1.1em; color: #ccc;">Looking for a custom display or bulk wholesale orders?</p>
+            <br>
+            <p><strong>📍 Showroom:</strong> Sri Palani Murugan Nagar, Thayilpatti</p>
+            <p><strong>📞 Phone:</strong> +91 8056 8056 83</p>
+            <p><strong>📧 Email:</strong> Prabuaans.mm86@gmail.com</p>
+            <br><hr style="border: 0.5px solid #333;"><br>
+            <a href="https://wa.me/8056805683" class="wa-btn">Message us on WhatsApp</a>
+        </div>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            // Remove active from links
+            document.querySelectorAll('.nav-menu a').forEach(a => a.classList.remove('active'));
+            
+            // Activate selected
+            document.getElementById(pageId).classList.add('active');
+            document.getElementById('btn-' + pageId).classList.add('active');
+            
+            // Scroll to top automatically
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
